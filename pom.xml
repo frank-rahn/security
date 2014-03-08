@@ -15,7 +15,18 @@
 	<packaging>pom</packaging>
 	<name>Security Maven Parent</name>
 	<description>Parent Security Maven Parent</description>
-	<url>https://github.com/frank-rahn/${project.artifactId}.git</url>
+	<url>https://github.com/frank-rahn/security.git</url>
+	<organization>
+		<name>Frank W. Rahn</name>
+		<url>http://www.frank-rahn.de</url>
+	</organization>
+	<developers>
+		<developer>
+			<id>frank-rahn</id>
+			<name>Frank Rahn</name>
+			<organization>Frank W. Rahn</organization>
+		</developer>
+	</developers>
 
 	<!-- Project Settings -->
 	<properties>
@@ -89,20 +100,14 @@
 						<downloadJavadocs>true</downloadJavadocs>
 					</configuration>
 				</plugin>
+
+				<plugin>
+					<groupId>org.codehaus.mojo</groupId>
+					<artifactId>exec-maven-plugin</artifactId>
+					<version>1.2.1</version>
+				</plugin>
 			</plugins>
 		</pluginManagement>
 	</build>
-
-	<organization>
-		<name>Frank W. Rahn</name>
-		<url>http://www.frank-rahn.de</url>
-	</organization>
-	<developers>
-		<developer>
-			<id>frank-rahn</id>
-			<name>Frank Rahn</name>
-			<organization>Frank W. Rahn</organization>
-		</developer>
-	</developers>
 
 </project>
