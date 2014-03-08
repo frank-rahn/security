@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project
+	xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="
+		http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd
+	">
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<groupId>de.rahn.security</groupId>
+		<artifactId>java-security-api</artifactId>
+		<version>1.0.0-SNAPSHOT</version>
+		<relativePath>..</relativePath>
+	</parent>
+
+	<!-- The Basics & Project information -->
+	<artifactId>java-security-api-provider</artifactId>
+	<packaging>jar</packaging>
+	<name>Java Security API Provider</name>
+	<description>Behandelt die Provider der Java Security API</description>
+	<url>https://github.com/frank-rahn/security.git</url>
+
+	<dependencies>
+		<!-- Tools -->
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-lang3</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>commons-codec</groupId>
+			<artifactId>commons-codec</artifactId>
+		</dependency>
+
+		<!-- Tools: The Legion of the Bouncy Castle -->
+		<!-- JCE: Provider -->
+		<!--dependency>
+			<groupId>org.bouncycastle</groupId>
+			<artifactId>bcprov-jdk15on</artifactId>
+		</dependency-->
+		<!-- JCE: Provider with IDEA -->
+		<dependency>
+			<groupId>org.bouncycastle</groupId>
+			<artifactId>bcprov-ext-jdk15on</artifactId>
+		</dependency>
+		<!-- JCE: PKIX/CMS/EAC/PKCS OCSP/TSP/OPENSSL -->
+		<dependency>
+			<groupId>org.bouncycastle</groupId>
+			<artifactId>bcpkix-jdk15on</artifactId>
+		</dependency>
+		<!-- JCE: SMIME -->
+		<dependency>
+			<groupId>org.bouncycastle</groupId>
+			<artifactId>bcmail-jdk15on</artifactId>
+		</dependency>
+		<!-- JCE: OpenPGP/BCPG -->
+		<dependency>
+			<groupId>org.bouncycastle</groupId>
+			<artifactId>bcpg-jdk15on</artifactId>
+		</dependency>
+	</dependencies>
+
+</project>
