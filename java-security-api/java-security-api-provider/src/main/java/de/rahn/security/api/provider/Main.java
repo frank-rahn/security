@@ -28,11 +28,11 @@ public class Main extends SecurityPrinter {
 		appendTitle("Die Liste der verfügbaren Security-Provider");
 
 		for (Provider provider : Security.getProviders()) {
-			appendDesc("Security Provider Info:")
+			appendDesc("Security Provider Info")
 				.appendValue("Name", provider.getName())
 				.appendValue("Version", provider.getVersion())
 				.appendValue("Info", provider.getInfo())
-				.appendToString(provider);
+				.appendToString(provider).appendln();
 		}
 	}
 }
