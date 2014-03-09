@@ -1,5 +1,5 @@
 Java Security API Common
 ========================
 
-Beinhaltet die allgemeinen Java Security API Klassen.
+Beinhaltet die allgemeinen Java Security API Utility Klassen.
 
