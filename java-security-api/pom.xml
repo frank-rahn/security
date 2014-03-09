@@ -36,6 +36,17 @@
 
 	<dependencyManagement>
 		<dependencies>
+			<dependency>
+				<groupId>${parent.groupId}</groupId>
+				<artifactId>java-security-api-common</artifactId>
+				<version>${parent.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>${parent.groupId}</groupId>
+				<artifactId>java-security-api-provider</artifactId>
+				<version>${parent.version}</version>
+			</dependency>
+
 			<!-- Tools -->
 			<dependency>
 				<groupId>org.apache.commons</groupId>
