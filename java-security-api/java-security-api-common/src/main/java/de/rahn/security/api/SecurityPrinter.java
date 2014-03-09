@@ -5,7 +5,6 @@ import static org.apache.commons.lang3.StringUtils.repeat;
 
 import java.io.Closeable;
 import java.io.Flushable;
-import java.io.IOException;
 import java.io.PrintWriter;
 
 /**
@@ -45,7 +44,7 @@ public abstract class SecurityPrinter implements Appendable, Closeable,
 	 * @see java.io.Flushable#flush()
 	 */
 	@Override
-	public final void flush() throws IOException {
+	public final void flush() {
 		writer.flush();
 	}
 
@@ -54,7 +53,7 @@ public abstract class SecurityPrinter implements Appendable, Closeable,
 	 * @see java.io.Closeable#close()
 	 */
 	@Override
-	public final void close() throws IOException {
+	public final void close() {
 		writer.close();
 	}
 
@@ -103,28 +102,62 @@ public abstract class SecurityPrinter implements Appendable, Closeable,
 	 * @return diesen Printer
 	 */
 	public SecurityPrinter append(byte[] bytes) {
-		writer.append("Hex = ");
+		writer.append("Hex[");
 		if (bytes == null) {
 			writer.append("null");
 		} else {
 			writer.append(encodeHexString(bytes));
 		}
+		writer.append(']');
 
 		return this;
 	}
 
 	/**
 	 * Schreibe einen Titel auf die Ausgabe.
-	 * @param title
+	 * @param title der Titel
 	 * @return diesen Printer
 	 */
-	public SecurityPrinter append(String title) {
+	public SecurityPrinter appendTitle(String title) {
 		String filler = repeat("#", title.length() + 4);
 		writer.append(filler).println();
 		writer.append("# ").append(title).append(" #").println();
 		writer.append(filler).println();
 		writer.println();
 		return this;
+	}
+
+	/**
+	 * Schreibe einen Objekt-Titel in die Ausgabe.
+	 * @param title der Titel
+	 * @return diesen Printer
+	 */
+	public SecurityPrinter appendDesc(String title) {
+		writer.append(title).println();
+		writer.append(repeat("-", title.length())).println();
+		return this;
+	}
+
+	/**
+	 * Schreibe einen Wert auf die Ausgabe.
+	 * @param name der Name des Werts
+	 * @param value der Wert
+	 * @return diesen Printer
+	 */
+	public SecurityPrinter appendValue(String name, Object value) {
+		writer.append(name).append(" = ").append(String.valueOf(value))
+			.println();
+		return this;
+	}
+
+	/**
+	 * Schreibe einen Wert auf die Ausgabe.
+	 * @param name der Name des Werts
+	 * @param value der Wert
+	 * @return diesen Printer
+	 */
+	public SecurityPrinter appendToString(Object value) {
+		return appendValue("toString()", value);
 	}
 
 }
