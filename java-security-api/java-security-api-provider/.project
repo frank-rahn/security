@@ -2,7 +2,9 @@
 <projectDescription>
   <name>java-security-api-provider</name>
   <comment>Behandelt die Provider der Java Security API. NO_M2ECLIPSE_SUPPORT: Project files created with the maven-eclipse-plugin are not supported in M2Eclipse.</comment>
-  <projects/>
+  <projects>
+    <project>java-security-api-common</project>
+  </projects>
   <buildSpec>
     <buildCommand>
       <name>org.eclipse.jdt.core.javabuilder</name>

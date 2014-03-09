@@ -23,14 +23,9 @@
 	<url>https://github.com/frank-rahn/security.git</url>
 
 	<dependencies>
-		<!-- Tools -->
 		<dependency>
-			<groupId>org.apache.commons</groupId>
-			<artifactId>commons-lang3</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>commons-codec</groupId>
-			<artifactId>commons-codec</artifactId>
+			<groupId>${parent.groupId}</groupId>
+			<artifactId>java-security-api-common</artifactId>
 		</dependency>
 
 		<!-- Tools: The Legion of the Bouncy Castle -->
