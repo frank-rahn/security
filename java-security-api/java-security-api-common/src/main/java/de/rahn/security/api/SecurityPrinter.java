@@ -2,6 +2,7 @@ package de.rahn.security.api;
 
 import static org.apache.commons.codec.binary.Hex.encodeHexString;
 import static org.apache.commons.lang3.StringUtils.repeat;
+import static org.apache.commons.lang3.StringUtils.rightPad;
 
 import java.io.Closeable;
 import java.io.Flushable;
@@ -16,6 +17,7 @@ public abstract class SecurityPrinter implements Appendable, Closeable,
 	Flushable, Runnable {
 
 	private PrintWriter writer;
+	private int number = 1;
 
 	/**
 	 * Default Konstruktor
@@ -133,9 +135,21 @@ public abstract class SecurityPrinter implements Appendable, Closeable,
 	 * @return diesen Printer
 	 */
 	public SecurityPrinter appendDesc(String title) {
-		writer.append(title).println();
-		writer.append(repeat("-", title.length())).println();
+		String n = " #" + number++;
+		writer.append(title).append(n).println();
+		writer.append(repeat("-", title.length() + n.length())).println();
 		return this;
+	}
+
+	/**
+	 * Schreibe einen Objekt-Titel in die Ausgabe.
+	 * @param title der Titel
+	 * @param startNumber die nächste Nummer
+	 * @return diesen Printer
+	 */
+	public SecurityPrinter appendDesc(String title, int startNumber) {
+		number = startNumber;
+		return appendDesc(title);
 	}
 
 	/**
@@ -145,8 +159,8 @@ public abstract class SecurityPrinter implements Appendable, Closeable,
 	 * @return diesen Printer
 	 */
 	public SecurityPrinter appendValue(String name, Object value) {
-		writer.append(name).append(" = ").append(String.valueOf(value))
-			.println();
+		writer.append(rightPad(name, 15)).append(" = ")
+			.append(String.valueOf(value)).println();
 		return this;
 	}
 
