@@ -1,3 +1,4 @@
+# Java Files #
 *.class
 
 # Package Files #
@@ -7,3 +8,4 @@
 
 # Project Files #
 target
+bin
