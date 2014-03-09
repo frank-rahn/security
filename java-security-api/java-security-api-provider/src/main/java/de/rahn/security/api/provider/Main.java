@@ -32,6 +32,7 @@ public class Main extends SecurityPrinter {
 				.appendValue("Name", provider.getName())
 				.appendValue("Version", provider.getVersion())
 				.appendValue("Info", provider.getInfo())
+				.appendValue("Classname", provider.getClass().getName())
 				.appendToString(provider).appendln();
 		}
 	}
