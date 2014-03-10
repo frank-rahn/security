@@ -1,4 +1,4 @@
-package de.rahn.security.api.provider;
+package de.rahn.security.api.provider.bouncycastle;
 
 import java.security.Provider;
 import java.security.Security;
@@ -7,6 +7,8 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
+import org.bouncycastle.jce.provider.BouncyCastleProvider;
 
 import de.rahn.security.api.SecurityPrinter;
 
@@ -30,7 +32,13 @@ public class Main extends SecurityPrinter {
 	 */
 	@Override
 	public void run() {
-		appendTitle("Die Liste der verfügbaren Security-Provider");
+		appendTitle("Die Liste der Security-Provider von The Legion of Bouncy Castle");
+
+		for (Provider provider : Security.getProviders()) {
+			Security.removeProvider(provider.getName());
+		}
+
+		Security.addProvider(new BouncyCastleProvider());
 
 		for (Provider provider : Security.getProviders()) {
 			appendDesc("Security Provider Info")

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+  <classpathentry kind="src" path="src/main/java" including="**/*.java"/>
+  <classpathentry kind="output" path="target/classes"/>
+  <classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+  <classpathentry kind="src" path="/java-security-api-common"/>
+  <classpathentry kind="var" path="M2_REPO/org/apache/commons/commons-lang3/3.3/commons-lang3-3.3.jar" sourcepath="M2_REPO/org/apache/commons/commons-lang3/3.3/commons-lang3-3.3-sources.jar">
+    <attributes>
+      <attribute value="jar:file:/home/frank/.m2/repository/org/apache/commons/commons-lang3/3.3/commons-lang3-3.3-javadoc.jar!/" name="javadoc_location"/>
+    </attributes>
+  </classpathentry>
+  <classpathentry kind="var" path="M2_REPO/commons-codec/commons-codec/1.9/commons-codec-1.9.jar" sourcepath="M2_REPO/commons-codec/commons-codec/1.9/commons-codec-1.9-sources.jar">
+    <attributes>
+      <attribute value="jar:file:/home/frank/.m2/repository/commons-codec/commons-codec/1.9/commons-codec-1.9-javadoc.jar!/" name="javadoc_location"/>
+    </attributes>
+  </classpathentry>
+  <classpathentry kind="var" path="M2_REPO/org/bouncycastle/bcprov-ext-jdk15on/1.50/bcprov-ext-jdk15on-1.50.jar" sourcepath="M2_REPO/org/bouncycastle/bcprov-ext-jdk15on/1.50/bcprov-ext-jdk15on-1.50-sources.jar">
+    <attributes>
+      <attribute value="jar:file:/home/frank/.m2/repository/org/bouncycastle/bcprov-ext-jdk15on/1.50/bcprov-ext-jdk15on-1.50-javadoc.jar!/" name="javadoc_location"/>
+    </attributes>
+  </classpathentry>
+  <classpathentry kind="var" path="M2_REPO/org/bouncycastle/bcpkix-jdk15on/1.50/bcpkix-jdk15on-1.50.jar" sourcepath="M2_REPO/org/bouncycastle/bcpkix-jdk15on/1.50/bcpkix-jdk15on-1.50-sources.jar">
+    <attributes>
+      <attribute value="jar:file:/home/frank/.m2/repository/org/bouncycastle/bcpkix-jdk15on/1.50/bcpkix-jdk15on-1.50-javadoc.jar!/" name="javadoc_location"/>
+    </attributes>
+  </classpathentry>
+  <classpathentry kind="var" path="M2_REPO/org/bouncycastle/bcmail-jdk15on/1.50/bcmail-jdk15on-1.50.jar" sourcepath="M2_REPO/org/bouncycastle/bcmail-jdk15on/1.50/bcmail-jdk15on-1.50-sources.jar">
+    <attributes>
+      <attribute value="jar:file:/home/frank/.m2/repository/org/bouncycastle/bcmail-jdk15on/1.50/bcmail-jdk15on-1.50-javadoc.jar!/" name="javadoc_location"/>
+    </attributes>
+  </classpathentry>
+  <classpathentry kind="var" path="M2_REPO/org/bouncycastle/bcpg-jdk15on/1.50/bcpg-jdk15on-1.50.jar" sourcepath="M2_REPO/org/bouncycastle/bcpg-jdk15on/1.50/bcpg-jdk15on-1.50-sources.jar">
+    <attributes>
+      <attribute value="jar:file:/home/frank/.m2/repository/org/bouncycastle/bcpg-jdk15on/1.50/bcpg-jdk15on-1.50-javadoc.jar!/" name="javadoc_location"/>
+    </attributes>
+  </classpathentry>
+</classpath>

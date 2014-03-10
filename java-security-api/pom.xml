@@ -32,6 +32,7 @@
 	<modules>
 		<module>java-security-api-common</module>
 		<module>java-security-api-provider</module>
+		<module>java-security-api-provider-bouncycastle</module>
 	</modules>
 
 	<dependencyManagement>
@@ -44,6 +45,11 @@
 			<dependency>
 				<groupId>${parent.groupId}</groupId>
 				<artifactId>java-security-api-provider</artifactId>
+				<version>${parent.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>${parent.groupId}</groupId>
+				<artifactId>java-security-api-provider-bouncycastle</artifactId>
 				<version>${parent.version}</version>
 			</dependency>
 

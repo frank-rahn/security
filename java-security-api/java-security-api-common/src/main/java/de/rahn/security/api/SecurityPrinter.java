@@ -18,6 +18,7 @@ public abstract class SecurityPrinter implements Appendable, Closeable,
 
 	private PrintWriter writer;
 	private int number = 1;
+	private int width;
 
 	/**
 	 * Default Konstruktor
@@ -32,6 +33,16 @@ public abstract class SecurityPrinter implements Appendable, Closeable,
 	 */
 	public SecurityPrinter(PrintWriter out) {
 		writer = out;
+		resetWidth();
+	}
+
+	/**
+	 * Die Spaltenbreite zurücksetzen.
+	 * @return diesen Printer
+	 */
+	public SecurityPrinter resetWidth() {
+		width = 15;
+		return this;
 	}
 
 	/**
@@ -159,9 +170,21 @@ public abstract class SecurityPrinter implements Appendable, Closeable,
 	 * @return diesen Printer
 	 */
 	public SecurityPrinter appendValue(String name, Object value) {
-		writer.append(rightPad(name, 15)).append(" = ")
+		writer.append(rightPad(name, width)).append(" = ")
 			.append(String.valueOf(value)).println();
 		return this;
+	}
+
+	/**
+	 * Schreibe einen Wert auf die Ausgabe.
+	 * @param name der Name des Werts
+	 * @param width die Spaltenbreite
+	 * @param value der Wert
+	 * @return diesen Printer
+	 */
+	public SecurityPrinter appendValue(String name, int width, Object value) {
+		this.width = width;
+		return appendValue(name, value);
 	}
 
 	/**
