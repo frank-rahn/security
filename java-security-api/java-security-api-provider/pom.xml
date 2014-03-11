@@ -24,7 +24,7 @@
 
 	<dependencies>
 		<dependency>
-			<groupId>${parent.groupId}</groupId>
+			<groupId>${project.parent.groupId}</groupId>
 			<artifactId>java-security-api-common</artifactId>
 		</dependency>
 	</dependencies>
