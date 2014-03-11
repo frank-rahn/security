@@ -23,3 +23,6 @@ Einige Beispiele und Tests mit der asymmetrische Verschlüsselung der Java Secur
 
 ## java-security-api-signature
 Einige Beispiele und Tests mit der digitalen Signatur der Java Security.
+
+## java-security-api-certificate
+Einige Beispiele und Tests mit Zertifikaten und dem Java KeyStore (JKS) der Java Security.
