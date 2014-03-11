@@ -16,6 +16,17 @@ import java.io.PrintWriter;
 public abstract class SecurityPrinter implements Appendable, Closeable,
 	Flushable, Runnable {
 
+	/** Ein Blindtext. */
+	protected static final String TEXT =
+		"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do"
+			+ " eiusmod tempor incididunt ut labore et dolore magna aliqua.";
+
+	/** Länge des Blindtextes. */
+	protected static final int TEXT_LENGTH = TEXT.length();
+
+	/** Das Passwort. */
+	protected static final String PASSWORD = "geheim";
+
 	private PrintWriter writer;
 	private int number = 1;
 	private int width;
@@ -127,6 +138,27 @@ public abstract class SecurityPrinter implements Appendable, Closeable,
 	}
 
 	/**
+	 * Schreibe die Fehlermeldung auf die Ausgabe
+	 * @param exception die Exception
+	 * @return diesen Printer
+	 */
+	public final SecurityPrinter append(Exception exception) {
+		return append("Fehler", exception);
+	}
+
+	/**
+	 * Schreibe die Fehlermeldung auf die Ausgabe
+	 * @param title der Title
+	 * @param exception die Exception
+	 * @return diesen Printer
+	 */
+	public SecurityPrinter append(String title, Exception exception) {
+		appendln().appendTitle(title);
+		exception.printStackTrace(writer);
+		return appendln();
+	}
+
+	/**
 	 * Schreibe einen Titel auf die Ausgabe.
 	 * @param title der Titel
 	 * @return diesen Printer
@@ -173,6 +205,17 @@ public abstract class SecurityPrinter implements Appendable, Closeable,
 		writer.append(rightPad(name, width)).append(" = ")
 			.append(String.valueOf(value)).println();
 		return this;
+	}
+
+	/**
+	 * Schreibe einen Wert auf die Ausgabe.
+	 * @param name der Name des Werts
+	 * @param bytes
+	 * @return diesen Printer
+	 */
+	public SecurityPrinter appendValue(String name, byte[] bytes) {
+		writer.append(rightPad(name, width)).append(" = ");
+		return append(bytes).appendln();
 	}
 
 	/**
