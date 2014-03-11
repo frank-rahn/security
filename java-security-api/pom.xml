@@ -36,6 +36,7 @@
 		<module>java-security-api-digest</module>
 		<module>java-security-api-encypt-symmetric</module>
 		<module>java-security-api-encypt-asymmetric</module>
+		<module>java-security-api-signature</module>
 	</modules>
 
 	<dependencyManagement>
@@ -68,6 +69,11 @@
 			<dependency>
 				<groupId>${project.parent.groupId}</groupId>
 				<artifactId>java-security-api-encypt-asymmetric</artifactId>
+				<version>${project.parent.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>${project.parent.groupId}</groupId>
+				<artifactId>java-security-api-signature</artifactId>
 				<version>${project.parent.version}</version>
 			</dependency>
 
