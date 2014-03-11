@@ -18,7 +18,7 @@
 	<!-- The Basics & Project information -->
 	<artifactId>java-security-api-provider-bouncycastle</artifactId>
 	<packaging>jar</packaging>
-	<name>Java Security API Provider</name>
+	<name>Java Security API Provider Bouncycastle</name>
 	<description>Behandelt die Provider der Java Security API</description>
 	<url>https://github.com/frank-rahn/security.git</url>
 
