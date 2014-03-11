@@ -14,3 +14,6 @@ Einige Beispiele und Tests mit den erweiterten Providern der
 
 ## java-security-api-digest
 Einige Beispiele und Tests mit den kryptologische Hashfunktionen der Java Security.
+
+## java-security-api-encypt-symmetric
+Einige Beispiele und Tests mit der symmetrische Verschlüsselung der Java Security.
