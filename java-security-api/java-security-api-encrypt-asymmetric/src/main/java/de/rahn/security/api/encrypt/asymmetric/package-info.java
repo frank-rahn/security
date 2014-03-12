@@ -4,4 +4,4 @@
  * Cryptography Extension (JCE).
  * @author Frank W. Rahn
  */
-package de.rahn.security.api.encypt.asymmetric;
+package de.rahn.security.api.encrypt.asymmetric;

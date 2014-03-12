@@ -4,4 +4,4 @@
  * Extension (JCE).
  * @author Frank W. Rahn
  */
-package de.rahn.security.api.encypt.symmetric;
+package de.rahn.security.api.encrypt.symmetric;

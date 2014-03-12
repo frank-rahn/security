@@ -1,4 +1,4 @@
-package de.rahn.security.api.encypt.symmetric;
+package de.rahn.security.api.encrypt.symmetric;
 
 import static java.util.Arrays.asList;
 import static javax.crypto.Cipher.DECRYPT_MODE;

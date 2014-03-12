@@ -1,4 +1,4 @@
-package de.rahn.security.api.encypt.asymmetric;
+package de.rahn.security.api.encrypt.asymmetric;
 
 import static javax.crypto.Cipher.DECRYPT_MODE;
 import static javax.crypto.Cipher.ENCRYPT_MODE;

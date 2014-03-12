@@ -16,10 +16,10 @@
 	</parent>
 
 	<!-- The Basics & Project information -->
-	<artifactId>java-security-api-encypt-symmetric</artifactId>
+	<artifactId>java-security-api-encrypt-asymmetric</artifactId>
 	<packaging>jar</packaging>
-	<name>Java Security API Secret-Key</name>
-	<description>Behandelt die symmetrische Verschlüsselung der Java Security API</description>
+	<name>Java Security API Pair-Key</name>
+	<description>Behandelt die asymmetrische Verschlüsselung der Java Security API</description>
 	<url>https://github.com/frank-rahn/security.git</url>
 
 	<dependencies>
@@ -37,7 +37,7 @@
 				<configuration>
 					<archive>
 						<manifest>
-							<mainClass>de.rahn.security.api.encypt.symmetric.Main</mainClass>
+							<mainClass>de.rahn.security.api.encrypt.asymmetric.Main</mainClass>
 						</manifest>
 					</archive>
 				</configuration>
@@ -47,7 +47,7 @@
 				<groupId>org.codehaus.mojo</groupId>
 				<artifactId>exec-maven-plugin</artifactId>
 				<configuration>
-					<mainClass>de.rahn.security.api.encypt.symmetric.Main</mainClass>
+					<mainClass>de.rahn.security.api.encrypt.asymmetric.Main</mainClass>
 				</configuration>
 				<executions>
 					<execution>
