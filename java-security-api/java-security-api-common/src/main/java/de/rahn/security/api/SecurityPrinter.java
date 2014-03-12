@@ -8,6 +8,7 @@ import static org.apache.commons.lang3.StringUtils.rightPad;
 import java.io.Closeable;
 import java.io.Flushable;
 import java.io.PrintWriter;
+import java.util.Enumeration;
 
 /**
  * Diese Klasse soll Objekte der Java-Security-API bzw. der Java Cryptography
@@ -205,6 +206,18 @@ public abstract class SecurityPrinter implements Appendable, Closeable,
 	/**
 	 * Schreibe einen Wert auf die Ausgabe.
 	 * @param name der Name des Werts
+	 * @param width die Spaltenbreite
+	 * @param value der Wert
+	 * @return diesen Printer
+	 */
+	public SecurityPrinter appendValue(String name, int width, Object value) {
+		this.width = width;
+		return appendValue(name, value);
+	}
+
+	/**
+	 * Schreibe einen Wert auf die Ausgabe.
+	 * @param name der Name des Werts
 	 * @param value der Wert
 	 * @return diesen Printer
 	 */
@@ -228,13 +241,30 @@ public abstract class SecurityPrinter implements Appendable, Closeable,
 	/**
 	 * Schreibe einen Wert auf die Ausgabe.
 	 * @param name der Name des Werts
-	 * @param width die Spaltenbreite
-	 * @param value der Wert
+	 * @param bytes
 	 * @return diesen Printer
 	 */
-	public SecurityPrinter appendValue(String name, int width, Object value) {
-		this.width = width;
-		return appendValue(name, value);
+	public <T> SecurityPrinter appendValue(String name,
+		Enumeration<T> enumeration) {
+		writer.append(rightPad(name, width)).append(" = ");
+
+		if (enumeration != null) {
+			writer.append('[');
+			boolean notFirst = false;
+			while (enumeration.hasMoreElements()) {
+				if (notFirst) {
+					writer.append(", ");
+				}
+				writer.append(String.valueOf(enumeration.nextElement()
+					.toString()));
+				notFirst = true;
+			}
+			writer.append(']');
+		} else {
+			writer.append("null");
+		}
+
+		return appendln();
 	}
 
 	/**
