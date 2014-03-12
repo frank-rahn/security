@@ -43,7 +43,7 @@ public class Main extends SecurityPrinter {
 			KeyPairGenerator keyGenerator =
 				KeyPairGenerator.getInstance(algorithm);
 			keyGenerator.initialize(4096, new SecureRandom());
-			appendDesc("Schlüsselgenerator", 1)
+			appendDesc("Schlüsselgenerator")
 				.appendValue("Algorithm", keyGenerator.getAlgorithm())
 				.appendValue("Provider", keyGenerator.getProvider())
 				.appendValue("Classname", keyGenerator.getClass().getName())
