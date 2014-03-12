@@ -1,5 +1,6 @@
 package de.rahn.security.api;
 
+import static java.lang.System.currentTimeMillis;
 import static org.apache.commons.codec.binary.Hex.encodeHexString;
 import static org.apache.commons.lang3.StringUtils.repeat;
 import static org.apache.commons.lang3.StringUtils.rightPad;
@@ -31,6 +32,8 @@ public abstract class SecurityPrinter implements Appendable, Closeable,
 	private int number = 1;
 	private int width;
 
+	private long startThread;
+
 	/**
 	 * Default Konstruktor
 	 */
@@ -45,6 +48,8 @@ public abstract class SecurityPrinter implements Appendable, Closeable,
 	public SecurityPrinter(PrintWriter out) {
 		writer = out;
 		resetWidth();
+
+		startThread = currentTimeMillis();
 	}
 
 	/**
@@ -178,7 +183,9 @@ public abstract class SecurityPrinter implements Appendable, Closeable,
 	 * @return diesen Printer
 	 */
 	public SecurityPrinter appendDesc(String title) {
-		String n = " #" + number++;
+		String n =
+			" #" + number++ + "  " + (currentTimeMillis() - startThread)
+				+ " ms";
 		writer.append(title).append(n).println();
 		writer.append(repeat("-", title.length() + n.length())).println();
 		return this;
