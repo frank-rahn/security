@@ -103,6 +103,7 @@
 				<version>${version.bouncycastle}</version>
 			</dependency>
 			<!-- JCE: Provider with IDEA -->
+			<!-- Gleider Inhalt wie bcprov-jdk15on nur zusätzlich IDEA -->
 			<dependency>
 				<groupId>org.bouncycastle</groupId>
 				<artifactId>bcprov-ext-jdk15on</artifactId>

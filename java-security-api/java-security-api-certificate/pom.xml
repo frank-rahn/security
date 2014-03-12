@@ -28,12 +28,6 @@
 			<artifactId>java-security-api-common</artifactId>
 		</dependency>
 
-		<!-- Tools: The Legion of the Bouncy Castle -->
-		<!-- JCE: Provider -->
-		<!--dependency>
-			<groupId>org.bouncycastle</groupId>
-			<artifactId>bcprov-jdk15on</artifactId>
-		</dependency-->
 		<!-- JCE: Provider with IDEA -->
 		<dependency>
 			<groupId>org.bouncycastle</groupId>
@@ -43,16 +37,6 @@
 		<dependency>
 			<groupId>org.bouncycastle</groupId>
 			<artifactId>bcpkix-jdk15on</artifactId>
-		</dependency>
-		<!-- JCE: SMIME -->
-		<dependency>
-			<groupId>org.bouncycastle</groupId>
-			<artifactId>bcmail-jdk15on</artifactId>
-		</dependency>
-		<!-- JCE: OpenPGP/BCPG -->
-		<dependency>
-			<groupId>org.bouncycastle</groupId>
-			<artifactId>bcpg-jdk15on</artifactId>
 		</dependency>
 	</dependencies>
 
