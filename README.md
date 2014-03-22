@@ -2,4 +2,7 @@
 Dieses Repository enthält Projekte mit dem Themenschwerpunkt Security.
 
 ## java-security-api  
-Projekte rund um die Java SE Security.
+Projekte mit Beispielen rund um die Java SE Security und Open Source Erweiterungen.
+
+## Homepage
+[Frank W. Rahn](http://www.frank-rahn.de)

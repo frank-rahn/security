@@ -1,5 +1,5 @@
 # Java Security API Provider
-Einige Beispiele und Tests mit den erweiterten Providern der 
+Einige Beispiele und Tests mit den erweiterten Security Providern der 
 [The Legion of the Bouncy Castle](https://www.bouncycastle.org/java.html).
 
 Das Ziel der *The Legion of the Bouncy Castle* war ursprünglich, die schwachen und 
