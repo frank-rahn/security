@@ -18,7 +18,7 @@ import de.rahn.security.api.SecurityPrinter;
 public class Main extends SecurityPrinter {
 
 	/** Name der {@link KeyStore}-Datei. */
-	protected static final String KEYSTORE = "keystore.jks";
+	protected static final String KEYSTORE = "target/keystore.jks";
 
 	private CertificateHolder rootCACertificate;
 	private CertificateHolder intermediateCACertificate;
