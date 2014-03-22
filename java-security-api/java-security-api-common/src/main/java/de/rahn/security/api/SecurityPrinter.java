@@ -27,7 +27,7 @@ public abstract class SecurityPrinter implements Appendable, Closeable,
 	protected static final int TEXT_LENGTH = TEXT.length();
 
 	/** Das Passwort. */
-	protected static final String PASSWORD = "geheim";
+	public static final String PASSWORD = "geheim";
 
 	private PrintWriter writer;
 	private int number = 1;
