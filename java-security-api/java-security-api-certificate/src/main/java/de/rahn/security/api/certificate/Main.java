@@ -1,29 +1,14 @@
 package de.rahn.security.api.certificate;
 
-import static org.bouncycastle.jce.provider.BouncyCastleProvider.PROVIDER_NAME;
-
 import java.io.File;
 import java.io.FileOutputStream;
 import java.math.BigInteger;
-import java.net.InetAddress;
-import java.security.KeyPair;
-import java.security.KeyPairGenerator;
 import java.security.KeyStore;
-import java.security.SecureRandom;
 import java.security.Security;
-import java.security.cert.Certificate;
 import java.security.cert.X509Certificate;
 import java.util.Date;
 
-import org.bouncycastle.asn1.x500.X500Name;
-import org.bouncycastle.asn1.x500.X500NameBuilder;
-import org.bouncycastle.asn1.x500.style.BCStyle;
-import org.bouncycastle.cert.X509v3CertificateBuilder;
-import org.bouncycastle.cert.jcajce.JcaX509CertificateConverter;
-import org.bouncycastle.cert.jcajce.JcaX509v3CertificateBuilder;
 import org.bouncycastle.jce.provider.BouncyCastleProvider;
-import org.bouncycastle.operator.ContentSigner;
-import org.bouncycastle.operator.jcajce.JcaContentSignerBuilder;
 
 import de.rahn.security.api.SecurityPrinter;
 
@@ -32,7 +17,12 @@ import de.rahn.security.api.SecurityPrinter;
  */
 public class Main extends SecurityPrinter {
 
-	private static final String KEYSTORE = "keystore.jks";
+	/** Name der {@link KeyStore}-Datei. */
+	protected static final String KEYSTORE = "keystore.jks";
+
+	private CertificateHolder rootCACertificate;
+	private CertificateHolder intermediateCACertificate;
+	private CertificateHolder endEntityCertificate;
 
 	/**
 	 * @param args
@@ -52,6 +42,9 @@ public class Main extends SecurityPrinter {
 		appendTitle("Zertifikate und Java KeyStore (JKS)");
 
 		try {
+			X509Certificate certificate;
+
+			// Den Provider registrieren
 			Security.addProvider(new BouncyCastleProvider());
 
 			// Leeren Java KeyStore anlegen
@@ -62,55 +55,65 @@ public class Main extends SecurityPrinter {
 				.appendValue("Type", keyStore.getType())
 				.appendValue("Provider", keyStore.getProvider())
 				.appendValue("Size (Entries)", keyStore.size())
+				.appendValue("Aliase", keyStore.aliases())
 				.appendValue("Classname", keyStore.getClass().getName())
 				.appendToString(keyStore).appendln();
 
-			// http://www.java2s.com/Tutorial/Java/0490__Security/Catalog0490__Security.htm
-
-			// Schlüsselpaar erzeugen
-			KeyPairGenerator keyPairGenerator =
-				KeyPairGenerator.getInstance("RSA", PROVIDER_NAME);
-			keyPairGenerator.initialize(4096, new SecureRandom());
-			KeyPair keyPair = keyPairGenerator.generateKeyPair();
-
-			// Erzeuge X.500 Namen
-			String hostname = InetAddress.getLocalHost().getHostName();
-			X500NameBuilder nameBuilder =
-				new X500NameBuilder().addRDN(BCStyle.CN, hostname)
-					.addRDN(BCStyle.OU, "Frank W. Rahn")
-					.addRDN(BCStyle.O, "Frank W. Rahn").addRDN(BCStyle.C, "DE");
-			X500Name subjectName = nameBuilder.build();
-
 			// Fortlaufende Nummer erzeugen
-			BigInteger serial = BigInteger.valueOf(System.currentTimeMillis());
+			BigInteger serial = BigInteger.ONE;
+			flush();
 
-			// Zeiträume festlegen
-			Date notBefore = new Date(System.currentTimeMillis() - 50000);
-			Date notAfter = new Date(System.currentTimeMillis() + 50000);
+			// Erzeuge das Root CA Zertifikat
+			rootCACertificate =
+				new RootCertificateBuilder(keyStore, serial).build();
+			certificate = rootCACertificate.getCertificate();
 
-			// Erzeuge ein X.509 Zertifikatgenerator
-			X509v3CertificateBuilder certificateBuilder =
-				new JcaX509v3CertificateBuilder(subjectName, serial, notBefore,
-					notAfter, subjectName, keyPair.getPublic());
-
-			// Erstelle den Signaturalgorithmus
-			ContentSigner signatureAlgoithm =
-				new JcaContentSignerBuilder("SHA256WithRSAEncryption")
-					.setProvider(PROVIDER_NAME).build(keyPair.getPrivate());
-
-			// Erstelle das selbstsignierte Zertifikat
-			X509Certificate certificate =
-				new JcaX509CertificateConverter()
-					.setProvider(PROVIDER_NAME)
-					.getCertificate(certificateBuilder.build(signatureAlgoithm));
-
-			// Füge ein Zertifikat hinzu
-			keyStore.setKeyEntry(hostname, keyPair.getPrivate(),
-				PASSWORD.toCharArray(), new Certificate[] { certificate });
-
-			// Basis Validierung
+			appendDesc("Root CA Zertifikat")
+				.appendValue("Type", certificate.getType())
+				.appendValue("Encoded", certificate.getEncoded())
+				.appendValue("Classname", certificate.getClass().getName())
+				.appendToString(certificate).appendln();
 			certificate.checkValidity(new Date());
-			certificate.verify(keyPair.getPublic());
+			certificate.verify(certificate.getPublicKey());
+
+			// Nächste fortlaufende Nummer erzeugen
+			serial = serial.add(BigInteger.ONE);
+			flush();
+
+			// Erzeuge das Intermediate CA Zertifikat
+			intermediateCACertificate =
+				new IntermediateCertificateBuilder(keyStore, serial,
+					rootCACertificate).build();
+			certificate = intermediateCACertificate.getCertificate();
+
+			appendDesc("Intermediate CA Zertifikat")
+				.appendValue("Type", certificate.getType())
+				.appendValue("Encoded", certificate.getEncoded())
+				.appendValue("Classname", certificate.getClass().getName())
+				.appendToString(certificate).appendln();
+			certificate.checkValidity(new Date());
+			certificate.verify(rootCACertificate.getKeyPair().getPublic());
+
+			// Nächste fortlaufende Nummer erzeugen
+			serial = serial.add(BigInteger.ONE);
+			flush();
+
+			// Erzeuge das End-Entity-Zertifikat
+			endEntityCertificate =
+				new EndEntityCertificateBuilder(keyStore, serial,
+					intermediateCACertificate).build();
+			certificate = endEntityCertificate.getCertificate();
+
+			appendDesc("End Entity Zertifikat")
+				.appendValue("Type", certificate.getType())
+				.appendValue("Encoded", certificate.getEncoded())
+				.appendValue("Classname", certificate.getClass().getName())
+				.appendToString(certificate).appendln();
+			certificate.checkValidity(new Date());
+			certificate.verify(intermediateCACertificate.getKeyPair()
+				.getPublic());
+
+			flush();
 
 			// Speichere Java KeyStore mit Passwort
 			try (FileOutputStream output =
@@ -122,6 +125,7 @@ public class Main extends SecurityPrinter {
 				.appendValue("Type", keyStore.getType())
 				.appendValue("Provider", keyStore.getProvider())
 				.appendValue("Size (Entries)", keyStore.size())
+				.appendValue("Aliases", keyStore.aliases())
 				.appendValue("Classname", keyStore.getClass().getName())
 				.appendToString(keyStore).appendln();
 		} catch (Exception exception) {
