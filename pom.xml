@@ -40,6 +40,7 @@
 
 	<modules>
 		<module>java-security-api</module>
+		<module>jaas-common</module>
 	</modules>
 
 	<dependencyManagement>
