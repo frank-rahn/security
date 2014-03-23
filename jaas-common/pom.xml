@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project
+	xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="
+		http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd
+	">
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<groupId>de.rahn.security</groupId>
+		<artifactId>security</artifactId>
+		<version>1.0.0-SNAPSHOT</version>
+		<relativePath>..</relativePath>
+	</parent>
+
+	<!-- The Basics & Project information -->
+	<artifactId>jaas-common</artifactId>
+	<packaging>jar</packaging>
+	<name>Java Authentication and Authorization Service - Common</name>
+	<description>Allgemeines zu Java Authentication and Authorization Service (JAAS)</description>
+	<url>https://github.com/frank-rahn/security.git</url>
+
+	<!-- Project Settings -->
+	<properties>
+		<version.commons.lang>3.3</version.commons.lang>
+	</properties>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-lang3</artifactId>
+			<version>${version.commons.lang}</version>
+		</dependency>
+	</dependencies>
+
+</project>
