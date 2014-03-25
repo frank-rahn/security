@@ -20,18 +20,13 @@
 	<packaging>jar</packaging>
 	<name>Java Authentication and Authorization Service - Common</name>
 	<description>Allgemeines zu Java Authentication and Authorization Service (JAAS)</description>
-	<url>https://github.com/frank-rahn/security.git</url>
+	<url>https://github.com/frank-rahn/security</url>
 
 	<!-- Project Settings -->
-	<properties>
-		<version.commons.lang>3.3</version.commons.lang>
-	</properties>
-
 	<dependencies>
 		<dependency>
 			<groupId>org.apache.commons</groupId>
 			<artifactId>commons-lang3</artifactId>
-			<version>${version.commons.lang}</version>
 		</dependency>
 	</dependencies>
 

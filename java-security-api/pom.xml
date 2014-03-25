@@ -20,11 +20,10 @@
 	<packaging>pom</packaging>
 	<name>Java Security API Maven Parent</name>
 	<description>Java SE Security API Maven Parent</description>
-	<url>https://github.com/frank-rahn/security.git</url>
+	<url>https://github.com/frank-rahn/security</url>
 
 	<!-- Project Settings -->
 	<properties>
-		<version.commons.lang>3.3</version.commons.lang>
 		<version.commons.codec>1.9</version.commons.codec>
 		<version.bouncycastle>1.50</version.bouncycastle>
 	</properties>
@@ -84,11 +83,6 @@
 			</dependency>
 
 			<!-- Tools -->
-			<dependency>
-				<groupId>org.apache.commons</groupId>
-				<artifactId>commons-lang3</artifactId>
-				<version>${version.commons.lang}</version>
-			</dependency>
 			<dependency>
 				<groupId>commons-codec</groupId>
 				<artifactId>commons-codec</artifactId>

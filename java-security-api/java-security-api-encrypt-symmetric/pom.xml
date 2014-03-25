@@ -20,7 +20,7 @@
 	<packaging>jar</packaging>
 	<name>Java Security API Secret-Key</name>
 	<description>Behandelt die symmetrische Verschlüsselung der Java Security API</description>
-	<url>https://github.com/frank-rahn/security.git</url>
+	<url>https://github.com/frank-rahn/security</url>
 
 	<dependencies>
 		<dependency>
