@@ -37,6 +37,7 @@
 		<module>java-security-api-encrypt-asymmetric</module>
 		<module>java-security-api-signature</module>
 		<module>java-security-api-certificate</module>
+		<module>java-security-api-certificate-maven</module>
 	</modules>
 
 	<dependencyManagement>
@@ -79,6 +80,11 @@
 			<dependency>
 				<groupId>${project.parent.groupId}</groupId>
 				<artifactId>java-security-api-certificate</artifactId>
+				<version>${project.parent.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>${project.parent.groupId}</groupId>
+				<artifactId>java-security-api-certificate-maven</artifactId>
 				<version>${project.parent.version}</version>
 			</dependency>
 

@@ -26,3 +26,6 @@ Einige Beispiele und Tests mit der digitalen Signatur der Java SE Security.
 
 ## java-security-api-certificate
 Einige Beispiele und Tests mit Zertifikaten und dem Java KeyStore (JKS) der Java SE Security.
+
+## java-security-api-certificate-maven
+Erzeugen eines Java KeyStores mit einem Zertifikat (End-Entity) per Maven Plugin (`keytool-maven-plugin`).
