@@ -48,10 +48,17 @@
 	<modules>
 		<module>java-security-api</module>
 		<module>jaas-common</module>
+		<module>jaas-modules</module>
 	</modules>
 
 	<dependencyManagement>
 		<dependencies>
+			<dependency>
+				<groupId>de.rahn.security</groupId>
+				<artifactId>jaas-common</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+
 			<dependency>
 				<groupId>org.apache.commons</groupId>
 				<artifactId>commons-lang3</artifactId>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project
+	xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="
+		http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd
+	">
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<groupId>de.rahn.security</groupId>
+		<artifactId>security</artifactId>
+		<version>1.0.0-SNAPSHOT</version>
+		<relativePath>..</relativePath>
+	</parent>
+
+	<!-- The Basics & Project information -->
+	<artifactId>jaas-modules</artifactId>
+	<packaging>jar</packaging>
+	<name>Java Authentication and Authorization Service - Modules</name>
+	<description>Implementierungen von LoginModules zu Java Authentication and Authorization Service (JAAS)</description>
+	<url>https://github.com/frank-rahn/security</url>
+
+	<!-- Project Settings -->
+	<dependencies>
+		<dependency>
+			<groupId>de.rahn.security</groupId>
+			<artifactId>jaas-common</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.hamcrest</groupId>
+			<artifactId>hamcrest-library</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+		</dependency>
+	</dependencies>
+
+</project>
