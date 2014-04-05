@@ -7,7 +7,6 @@ import javax.security.auth.callback.Callback;
 import javax.security.auth.callback.CallbackHandler;
 import javax.security.auth.login.LoginContext;
 
-import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -36,12 +35,9 @@ public class LoggingLoginModuleTest {
 	}
 
 	/**
-	 * @throws java.lang.Exception
+	 * Führe ein Login und ein Logout durch.
+	 * @throws Exception falls ein Fehler im Security-Module auftritt
 	 */
-	@After
-	public void tearDown() throws Exception {
-	}
-
 	@Test
 	public void testLogin() throws Exception {
 		ctx.login();
