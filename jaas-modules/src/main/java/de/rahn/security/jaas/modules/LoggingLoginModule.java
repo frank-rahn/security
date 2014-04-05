@@ -14,12 +14,14 @@ import javax.security.auth.spi.LoginModule;
 public class LoggingLoginModule implements LoginModule {
 
 	private static final Logger LOGGER = Logger
-			.getLogger(LoggingLoginModule.class.getName());
+		.getLogger(LoggingLoginModule.class.getName());
 
 	private Subject subject;
 	private CallbackHandler callbackHandler;
 	private Map<String, ?> sharedState;
 	private Map<String, ?> options;
+
+	private String position = "<init>";
 
 	/**
 	 * Konstruktor.
@@ -33,13 +35,27 @@ public class LoggingLoginModule implements LoginModule {
 	 * @param method die akuelle Methode
 	 * @return immer <code>true</code>
 	 */
-	private boolean log(String method) {
+	private final boolean log(String method) {
+		return log(method, false);
+	}
+
+	/**
+	 * Log den aktuellen Schritt.
+	 * @param method die akuelle Methode
+	 * @return immer <code>true</code>
+	 */
+	private boolean log(String method, boolean withOptions) {
 		StringBuilder stringBuilder =
-				new StringBuilder("Login Module ").append(method)
+			new StringBuilder("Login Module ").append(method)
+				.append(" an der Position ").append(position)
 				.append(" aufgerufen\n\tClass   ").append(getClass().getName())
-				.append("\n\tSubject ").append(subject).append("\n\tHandler ")
-				.append(callbackHandler).append("\n\tStates  ")
-				.append(sharedState).append("\n\tOptions ").append(options);
+				.append("\n\tSubject ").append(subject).append("\n\tStates  ")
+				.append(sharedState);
+
+		if (withOptions) {
+			stringBuilder.append("\n\tHandler ").append(callbackHandler)
+			.append("\n\tOptions ").append(options);
+		}
 
 		LOGGER.info(stringBuilder.toString());
 
@@ -58,7 +74,9 @@ public class LoggingLoginModule implements LoginModule {
 		this.sharedState = sharedState;
 		this.options = options;
 
-		log("initialize()");
+		position = (String) options.get("position");
+
+		log("initialize()", true);
 	}
 
 	/**
