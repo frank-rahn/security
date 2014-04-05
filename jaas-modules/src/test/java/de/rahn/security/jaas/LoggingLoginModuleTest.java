@@ -1,4 +1,4 @@
-package de.rahn.security.jaas.modules;
+package de.rahn.security.jaas;
 
 import static org.hamcrest.Matchers.notNullValue;
 import static org.junit.Assert.assertThat;
