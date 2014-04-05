@@ -19,6 +19,13 @@ public class UserPrincipal extends AbstractPrincipal {
 
 	/**
 	 * @param name der Name eines Benutzers
+	 */
+	public UserPrincipal(String name) {
+		this(name, null);
+	}
+
+	/**
+	 * @param name der Name eines Benutzers
 	 * @param roles die Rollen des Benutzers, kann <code>null</code> sein
 	 */
 	public UserPrincipal(String name, Set<RolePrincipal> roles) {
