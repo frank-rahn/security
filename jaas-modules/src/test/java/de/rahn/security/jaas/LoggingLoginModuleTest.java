@@ -24,14 +24,15 @@ public class LoggingLoginModuleTest {
 	@Before
 	public void setUp() throws Exception {
 		System.setProperty("java.security.auth.login.config",
-				"src/main/etc/jaas.config");
+			"src/main/etc/jaas.config");
 
-		ctx = new LoginContext("RahnLoggingLoginModule", new CallbackHandler() {
-			@Override
-			public void handle(Callback[] callbacks) {
-				// nichts zu tun
-			}
-		});
+		ctx =
+			new LoginContext("RahnLoggingLoginModules", new CallbackHandler() {
+				@Override
+				public void handle(Callback[] callbacks) {
+					// nichts zu tun
+				}
+			});
 	}
 
 	/**
