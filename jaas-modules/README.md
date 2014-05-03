@@ -3,3 +3,6 @@ Dieses Projekt enthält einige Implementierungen der Schnittstelle `LoginModule`
 
 * Benutzer-spezifische `LoginModule`
 * Zugehörige Konfiguration unter `src/main/etc/jaas.config`
+
+## Homepage des Autors
+[Frank W. Rahn](http://www.frank-rahn.de)

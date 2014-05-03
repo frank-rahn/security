@@ -5,3 +5,6 @@ Einige Beispiele und Tests mit der symmetrische Verschlüsselung der Java Securi
 * Beispielhafter Test der Verschlüsselung.
 
 Die Anwendung kann mit `mvn exec:java` ausgeführt werden.
+
+## Homepage des Autors
+[Frank W. Rahn](http://www.frank-rahn.de)

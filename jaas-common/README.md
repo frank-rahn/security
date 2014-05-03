@@ -3,3 +3,6 @@ Dieses Projekt enthält einige Utilities für die [Java Authentication and Autho
 
 * Benutzer-spezifische Principals
 * Allgemeine Utilities
+
+## Homepage des Autors
+[Frank W. Rahn](http://www.frank-rahn.de)

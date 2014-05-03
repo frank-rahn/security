@@ -7,3 +7,6 @@ begrenzten Algorithmen der Security von Java zu erweitern. Dieses war durch die
 Exportbeschränkung der USA notwendig. 
 
 Die Anwendung kann mit `mvn exec:java` ausgeführt werden.
+
+## Homepage des Autors
+[Frank W. Rahn](http://www.frank-rahn.de)

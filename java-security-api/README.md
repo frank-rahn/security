@@ -29,3 +29,6 @@ Einige Beispiele und Tests mit Zertifikaten und dem Java KeyStore (JKS) der Java
 
 ## java-security-api-certificate-maven
 Erzeugen eines Java KeyStores mit einem Zertifikat (End-Entity) per Maven Plugin (`keytool-maven-plugin`).
+
+## Homepage des Autors
+[Frank W. Rahn](http://www.frank-rahn.de)

@@ -5,3 +5,6 @@ Einige Beispiele und Tests mit den kryptologische Hashfunktionen der Java Securi
 * Bilden und überprüfen von Hashes.
 
 Die Anwendung kann mit `mvn exec:java` ausgeführt werden.
+
+## Homepage des Autors
+[Frank W. Rahn](http://www.frank-rahn.de)
