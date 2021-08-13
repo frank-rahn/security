@@ -25,7 +25,7 @@
 	<!-- Project Settings -->
 	<properties>
 		<version.commons.codec>1.9</version.commons.codec>
-		<version.bouncycastle>1.50</version.bouncycastle>
+		<version.bouncycastle>1.67</version.bouncycastle>
 	</properties>
 
 	<modules>
