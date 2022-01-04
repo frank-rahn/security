@@ -6,7 +6,7 @@ untersucht.
 Beinhaltet allgemeinen Java Security API Utility Klassen.
 
 ## java-security-api-provider
-Einige Beispiele und Tests mit den Security Providern der Java SE Security.
+Einige Beispiele und Tests mit den Security-Providern aus der Java SE Security.
 
 ## java-security-api-provider-bouncycastle
 Einige Beispiele und Tests mit den erweiterten Security Providern der 
