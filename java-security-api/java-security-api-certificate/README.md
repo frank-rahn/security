@@ -9,4 +9,4 @@ Einige Beispiele und Tests mit Zertifikaten und dem Java KeyStore (JKS) der Java
 Die Anwendung kann mit `mvn exec:java` ausgeführt werden.
 
 ## Homepage des Autors
-[Frank W. Rahn](http://www.frank-rahn.de)
+[Frank W. Rahn](https://www.frank-rahn.de)

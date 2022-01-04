@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="java-security-api-provider-bouncycastle" />
+        <module name="java-security-api-digest" />
+        <module name="jaas-modules" />
+        <module name="java-security-api-encrypt-asymmetric" />
+        <module name="java-security-api-signature" />
+        <module name="java-security-api-certificate" />
+        <module name="java-security-api-encrypt-symmetric" />
+        <module name="java-security-api-common" />
+        <module name="jaas-common" />
+        <module name="java-security-api-provider" />
+      </profile>
+    </annotationProcessing>
+  </component>
+</project>

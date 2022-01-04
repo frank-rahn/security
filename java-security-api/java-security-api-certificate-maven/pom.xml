@@ -1,120 +1,116 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<project
-	xmlns="http://maven.apache.org/POM/4.0.0"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="
-		http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd
-	">
-	<modelVersion>4.0.0</modelVersion>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
 
-	<parent>
-		<groupId>de.rahn.security</groupId>
-		<artifactId>java-security-api</artifactId>
-		<version>1.0.0-SNAPSHOT</version>
-		<relativePath>..</relativePath>
-	</parent>
+  <parent>
+    <groupId>de.rahn.security</groupId>
+    <artifactId>java-security-api</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+    <relativePath>../pom.xml</relativePath>
+  </parent>
 
-	<!-- The Basics & Project information -->
-	<artifactId>java-security-api-certificate-maven</artifactId>
-	<packaging>pom</packaging>
-	<name>Java Security API Java KeyStore mit Maven</name>
-	<description>Behandelt Zertifikate und Java KeyStore der Java Security API mit Maven erstellen</description>
-	<url>https://github.com/frank-rahn/security</url>
+  <!-- The Basics & Project information -->
+  <artifactId>java-security-api-certificate-maven</artifactId>
+  <packaging>pom</packaging>
+  <name>Java Security API Java KeyStore mit Maven</name>
+  <description>Behandelt Zertifikate und Java KeyStore der Java Security API mit Maven erstellen</description>
+  <url>https://github.com/frank-rahn/security</url>
 
-	<properties>
-		<keystore.file>${project.build.directory}/keystore.jks</keystore.file>
-		<keystore.password>java-key-store-pwd</keystore.password>
-		<key.password>key-pwd</key.password>
-	</properties>
+  <properties>
+    <keystore.file>${project.build.directory}/keystore.jks</keystore.file>
+    <keystore.password>java-key-store-pwd</keystore.password>
+    <key.password>key-pwd</key.password>
+  </properties>
 
-	<build>
-		<pluginManagement>
-			<plugins>
-				<plugin>
-					<groupId>org.codehaus.mojo</groupId>
-					<artifactId>keytool-maven-plugin</artifactId>
-					<version>1.4</version>
-				</plugin>
-				<plugin>
-					<groupId>org.codehaus.mojo</groupId>
-					<artifactId>build-helper-maven-plugin</artifactId>
-					<version>1.8</version>
-				</plugin>
-			</plugins>
-		</pluginManagement>
+  <build>
+    <pluginManagement>
+      <plugins>
+        <plugin>
+          <groupId>org.codehaus.mojo</groupId>
+          <artifactId>keytool-maven-plugin</artifactId>
+          <version>1.5</version>
+        </plugin>
+        <plugin>
+          <groupId>org.codehaus.mojo</groupId>
+          <artifactId>build-helper-maven-plugin</artifactId>
+          <version>3.2.0</version>
+        </plugin>
+      </plugins>
+    </pluginManagement>
 
-		<plugins>
-			<plugin>
-				<groupId>org.codehaus.mojo</groupId>
-				<artifactId>keytool-maven-plugin</artifactId>
-				<executions>
-					<execution>
-						<id>clean</id>
-						<phase>generate-sources</phase>
-						<goals>
-							<goal>clean</goal>
-						</goals>
-						<configuration>
-							<keystore>${keystore.file}</keystore>
-						</configuration>
-					</execution>
-					<execution>
-						<id>generate-certificate</id>
-						<phase>generate-sources</phase>
-						<goals>
-							<goal>generateKeyPair</goal>
-						</goals>
-						<configuration>
-							<alias>end</alias>
-							<keypass>${key.password}</keypass>
-							<dname>cn=End Entity Certificate,o=Frank W. Rahn,c=DE</dname>
-							<keyalg>RSA</keyalg>
-							<keysize>4096</keysize>s
-							<sigalg>SHA256WithRSA</sigalg><!--Encryption-->
-							<ext>BasicConstraints:critical=ca:false,pathlen:0</ext>
-							<ext>KeyUsage:critical=keyCertSign,cRLSign,digitalSignature,keyEncipherment,dataEncipherment</ext>
-							<validity>365</validity>
-							<keystore>${keystore.file}</keystore>
-							<storepass>${keystore.password}</storepass>
-						</configuration>
-					</execution>
-					<execution>
-						<id>list</id>
-						<phase>generate-sources</phase>
-						<goals>
-							<goal>list</goal>
-						</goals>
-						<configuration>
-							<verbose>true</verbose>
-							<keystore>${keystore.file}</keystore>
-							<storepass>${keystore.password}</storepass>
-						</configuration>
-					</execution>
-				</executions>
-			</plugin>
-				<plugin>
-					<groupId>org.codehaus.mojo</groupId>
-					<artifactId>build-helper-maven-plugin</artifactId>
-					<executions>
-						<execution>
-							<id>attach-keystore</id>
-							<phase>package</phase>
-							<goals>
-								<goal>attach-artifact</goal>
-							</goals>
-							<configuration>
-								<artifacts>
-									<artifact>
-										<file>${keystore.file}</file>
-										<type>jks</type>
-									</artifact>
-								</artifacts>
-							</configuration>
-						</execution>
-					</executions>
-				</plugin>
-		</plugins>
-	</build>
+    <plugins>
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>keytool-maven-plugin</artifactId>
+        <executions>
+          <execution>
+            <id>clean</id>
+            <phase>generate-sources</phase>
+            <goals>
+              <goal>clean</goal>
+            </goals>
+            <configuration>
+              <keystore>${keystore.file}</keystore>
+            </configuration>
+          </execution>
+          <execution>
+            <id>generate-certificate</id>
+            <phase>generate-sources</phase>
+            <goals>
+              <goal>generateKeyPair</goal>
+            </goals>
+            <configuration>
+              <alias>end</alias>
+              <keypass>${key.password}</keypass>
+              <dname>cn=End Entity Certificate,o=Frank W. Rahn,c=DE</dname>
+              <keyalg>RSA</keyalg>
+              <keysize>4096</keysize>s
+              <sigalg>SHA256WithRSA</sigalg><!--Encryption-->
+              <ext>BasicConstraints:critical=ca:false,pathlen:0</ext>
+              <ext>KeyUsage:critical=keyCertSign,cRLSign,digitalSignature,keyEncipherment,dataEncipherment</ext>
+              <validity>365</validity>
+              <keystore>${keystore.file}</keystore>
+              <storepass>${keystore.password}</storepass>
+            </configuration>
+          </execution>
+          <execution>
+            <id>list</id>
+            <phase>generate-sources</phase>
+            <goals>
+              <goal>list</goal>
+            </goals>
+            <configuration>
+              <verbose>true</verbose>
+              <keystore>${keystore.file}</keystore>
+              <storepass>${keystore.password}</storepass>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>build-helper-maven-plugin</artifactId>
+        <executions>
+          <execution>
+            <id>attach-keystore</id>
+            <phase>package</phase>
+            <goals>
+              <goal>attach-artifact</goal>
+            </goals>
+            <configuration>
+              <artifacts>
+                <artifact>
+                  <file>${keystore.file}</file>
+                  <type>jks</type>
+                </artifact>
+              </artifacts>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+  </build>
 
 </project>

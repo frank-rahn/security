@@ -11,7 +11,7 @@ Dieses Projekt enthält einige Utilities für die [Java Authentication and Autho
 Dieses Projekt enthält einige `LoginModule` für die [Java Authentication and Authorization Service (JAAS)](http://docs.oracle.com/javase/7/docs/technotes/guides/security/jaas/JAASRefGuide.html).
 
 ## Build mit Maven 
-Eclipse Konfiguration neu erzeugen: `$ mvn eclipse:clean eclipse:eclipse`
+~~Eclipse Konfiguration neu erzeugen:~~ `$ mvn eclipse:clean eclipse:eclipse`
 
 Anwendung bauen: `$ mvn clean install`
 
@@ -23,4 +23,4 @@ Dieses Projekt wird automatisiert mit [Jenkins](http://jenkins-ci.org/) gebaut.
 Es wird der Hosting-Dienst [BuildHive](https://buildhive.cloudbees.com/) von [CloudBees](http://www.cloudbees.com/) verwendet.
 
 ## Homepage des Autors
-[Frank W. Rahn](http://www.frank-rahn.de)
+[Frank W. Rahn](https://www.frank-rahn.de)

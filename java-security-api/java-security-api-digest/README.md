@@ -7,4 +7,4 @@ Einige Beispiele und Tests mit den kryptologische Hashfunktionen der Java Securi
 Die Anwendung kann mit `mvn exec:java` ausgeführt werden.
 
 ## Homepage des Autors
-[Frank W. Rahn](http://www.frank-rahn.de)
+[Frank W. Rahn](https://www.frank-rahn.de)

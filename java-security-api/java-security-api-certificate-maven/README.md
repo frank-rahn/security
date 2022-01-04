@@ -5,4 +5,4 @@ Einige Beispiele und Tests mit Zertifikaten und dem Java KeyStore (JKS) der Java
 * Das Hinzufügen des Java KeyStores als Maven Artifakts (`<type>jks</type>`).
 
 ## Homepage des Autors
-[Frank W. Rahn](http://www.frank-rahn.de)
+[Frank W. Rahn](https://www.frank-rahn.de)

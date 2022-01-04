@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/jaas-common/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/jaas-common/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/jaas-modules/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/jaas-modules/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/java-security-api/java-security-api-certificate-maven/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/java-security-api/java-security-api-certificate-maven/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/java-security-api/java-security-api-certificate/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/java-security-api/java-security-api-certificate/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/java-security-api/java-security-api-common/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/java-security-api/java-security-api-common/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/java-security-api/java-security-api-digest/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/java-security-api/java-security-api-digest/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/java-security-api/java-security-api-encrypt-asymmetric/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/java-security-api/java-security-api-encrypt-asymmetric/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/java-security-api/java-security-api-encrypt-symmetric/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/java-security-api/java-security-api-encrypt-symmetric/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/java-security-api/java-security-api-provider-bouncycastle/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/java-security-api/java-security-api-provider-bouncycastle/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/java-security-api/java-security-api-provider/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/java-security-api/java-security-api-provider/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/java-security-api/java-security-api-signature/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/java-security-api/java-security-api-signature/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/java-security-api/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/java-security-api/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/resources" charset="UTF-8" />
+  </component>
+</project>

@@ -5,4 +5,4 @@ Dieses Projekt enthält einige Utilities für die [Java Authentication and Autho
 * Allgemeine Utilities
 
 ## Homepage des Autors
-[Frank W. Rahn](http://www.frank-rahn.de)
+[Frank W. Rahn](https://www.frank-rahn.de)

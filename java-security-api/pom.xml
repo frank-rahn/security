@@ -1,151 +1,147 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<project
-	xmlns="http://maven.apache.org/POM/4.0.0"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="
-		http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd
-	">
-	<modelVersion>4.0.0</modelVersion>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
 
-	<parent>
-		<groupId>de.rahn.security</groupId>
-		<version>1.0.0-SNAPSHOT</version>
-		<artifactId>security</artifactId>
-		<relativePath>..</relativePath>
-	</parent>
+  <parent>
+    <groupId>de.rahn.security</groupId>
+    <version>1.0.0-SNAPSHOT</version>
+    <artifactId>security</artifactId>
+    <relativePath>../pom.xml</relativePath>
+  </parent>
 
-	<!-- The Basics & Project information -->
-	<artifactId>java-security-api</artifactId>
-	<packaging>pom</packaging>
-	<name>Java Security API Maven Parent</name>
-	<description>Java SE Security API Maven Parent</description>
-	<url>https://github.com/frank-rahn/security</url>
+  <!-- The Basics & Project information -->
+  <artifactId>java-security-api</artifactId>
+  <packaging>pom</packaging>
+  <name>Java Security API Maven Parent</name>
+  <description>Java SE Security API Maven Parent</description>
+  <url>https://github.com/frank-rahn/security</url>
 
-	<!-- Project Settings -->
-	<properties>
-		<version.commons.codec>1.9</version.commons.codec>
-		<version.bouncycastle>1.50</version.bouncycastle>
-	</properties>
+  <!-- Project Settings -->
+  <properties>
+    <version.commons.codec>1.15</version.commons.codec>
+    <version.bouncycastle>1.70</version.bouncycastle>
+  </properties>
 
-	<modules>
-		<module>java-security-api-common</module>
-		<module>java-security-api-provider</module>
-		<module>java-security-api-provider-bouncycastle</module>
-		<module>java-security-api-digest</module>
-		<module>java-security-api-encrypt-symmetric</module>
-		<module>java-security-api-encrypt-asymmetric</module>
-		<module>java-security-api-signature</module>
-		<module>java-security-api-certificate</module>
-		<module>java-security-api-certificate-maven</module>
-	</modules>
+  <modules>
+    <module>java-security-api-common</module>
+    <module>java-security-api-provider</module>
+    <module>java-security-api-provider-bouncycastle</module>
+    <module>java-security-api-digest</module>
+    <module>java-security-api-encrypt-symmetric</module>
+    <module>java-security-api-encrypt-asymmetric</module>
+    <module>java-security-api-signature</module>
+    <module>java-security-api-certificate</module>
+    <module>java-security-api-certificate-maven</module>
+  </modules>
 
-	<dependencyManagement>
-		<dependencies>
-			<dependency>
-				<groupId>${project.parent.groupId}</groupId>
-				<artifactId>java-security-api-common</artifactId>
-				<version>${project.parent.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>${project.parent.groupId}</groupId>
-				<artifactId>java-security-api-provider</artifactId>
-				<version>${project.parent.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>${project.parent.groupId}</groupId>
-				<artifactId>java-security-api-provider-bouncycastle</artifactId>
-				<version>${project.parent.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>${project.parent.groupId}</groupId>
-				<artifactId>java-security-api-digest</artifactId>
-				<version>${project.parent.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>${project.parent.groupId}</groupId>
-				<artifactId>java-security-api-encrypt-symmetric</artifactId>
-				<version>${project.parent.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>${project.parent.groupId}</groupId>
-				<artifactId>java-security-api-encrypt-asymmetric</artifactId>
-				<version>${project.parent.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>${project.parent.groupId}</groupId>
-				<artifactId>java-security-api-signature</artifactId>
-				<version>${project.parent.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>${project.parent.groupId}</groupId>
-				<artifactId>java-security-api-certificate</artifactId>
-				<version>${project.parent.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>${project.parent.groupId}</groupId>
-				<artifactId>java-security-api-certificate-maven</artifactId>
-				<version>${project.parent.version}</version>
-			</dependency>
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>${project.parent.groupId}</groupId>
+        <artifactId>java-security-api-common</artifactId>
+        <version>${project.parent.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>${project.parent.groupId}</groupId>
+        <artifactId>java-security-api-provider</artifactId>
+        <version>${project.parent.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>${project.parent.groupId}</groupId>
+        <artifactId>java-security-api-provider-bouncycastle</artifactId>
+        <version>${project.parent.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>${project.parent.groupId}</groupId>
+        <artifactId>java-security-api-digest</artifactId>
+        <version>${project.parent.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>${project.parent.groupId}</groupId>
+        <artifactId>java-security-api-encrypt-symmetric</artifactId>
+        <version>${project.parent.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>${project.parent.groupId}</groupId>
+        <artifactId>java-security-api-encrypt-asymmetric</artifactId>
+        <version>${project.parent.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>${project.parent.groupId}</groupId>
+        <artifactId>java-security-api-signature</artifactId>
+        <version>${project.parent.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>${project.parent.groupId}</groupId>
+        <artifactId>java-security-api-certificate</artifactId>
+        <version>${project.parent.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>${project.parent.groupId}</groupId>
+        <artifactId>java-security-api-certificate-maven</artifactId>
+        <version>${project.parent.version}</version>
+      </dependency>
 
-			<!-- Tools -->
-			<dependency>
-				<groupId>commons-codec</groupId>
-				<artifactId>commons-codec</artifactId>
-				<version>${version.commons.codec}</version>
-			</dependency>
+      <!-- Tools -->
+      <dependency>
+        <groupId>commons-codec</groupId>
+        <artifactId>commons-codec</artifactId>
+        <version>${version.commons.codec}</version>
+      </dependency>
 
-			<!-- Tools: The Legion of the Bouncy Castle -->
-			<!-- JCE: Provider -->
-			<dependency>
-				<groupId>org.bouncycastle</groupId>
-				<artifactId>bcprov-jdk15on</artifactId>
-				<version>${version.bouncycastle}</version>
-			</dependency>
-			<!-- JCE: Provider with IDEA -->
-			<!-- Gleider Inhalt wie bcprov-jdk15on nur zusätzlich IDEA -->
-			<dependency>
-				<groupId>org.bouncycastle</groupId>
-				<artifactId>bcprov-ext-jdk15on</artifactId>
-				<version>${version.bouncycastle}</version>
-			</dependency>
-			<!-- JCE: PKIX/CMS/EAC/PKCS OCSP/TSP/OPENSSL -->
-			<dependency>
-				<groupId>org.bouncycastle</groupId>
-				<artifactId>bcpkix-jdk15on</artifactId>
-				<version>${version.bouncycastle}</version>
-				<exclusions>
-					<exclusion>
-						<artifactId>bcprov-jdk15on</artifactId>
-						<groupId>org.bouncycastle</groupId>
-					</exclusion>
-				</exclusions>
-			</dependency>
-			<!-- JCE: SMIME -->
-			<dependency>
-				<groupId>org.bouncycastle</groupId>
-				<artifactId>bcmail-jdk15on</artifactId>
-				<version>${version.bouncycastle}</version>
-				<exclusions>
-					<exclusion>
-						<artifactId>bcprov-jdk15on</artifactId>
-						<groupId>org.bouncycastle</groupId>
-					</exclusion>
-				</exclusions>
-			</dependency>
-			<!-- JCE: OpenPGP/BCPG -->
-			<dependency>
-				<groupId>org.bouncycastle</groupId>
-				<artifactId>bcpg-jdk15on</artifactId>
-				<version>${version.bouncycastle}</version>
-				<exclusions>
-					<exclusion>
-						<artifactId>bcprov-jdk15on</artifactId>
-						<groupId>org.bouncycastle</groupId>
-					</exclusion>
-				</exclusions>
-			</dependency>
-		</dependencies>
-	</dependencyManagement>
+      <!-- Tools: The Legion of the Bouncy Castle -->
+      <!-- JCE: Provider -->
+      <dependency>
+        <groupId>org.bouncycastle</groupId>
+        <artifactId>bcprov-jdk15on</artifactId>
+        <version>${version.bouncycastle}</version>
+      </dependency>
+      <!-- JCE: Provider with IDEA -->
+      <!-- Gleider Inhalt wie bcprov-jdk15on nur zusätzlich IDEA -->
+      <dependency>
+        <groupId>org.bouncycastle</groupId>
+        <artifactId>bcprov-ext-jdk15on</artifactId>
+        <version>${version.bouncycastle}</version>
+      </dependency>
+      <!-- JCE: PKIX/CMS/EAC/PKCS OCSP/TSP/OPENSSL -->
+      <dependency>
+        <groupId>org.bouncycastle</groupId>
+        <artifactId>bcpkix-jdk15on</artifactId>
+        <version>${version.bouncycastle}</version>
+        <exclusions>
+          <exclusion>
+            <artifactId>bcprov-jdk15on</artifactId>
+            <groupId>org.bouncycastle</groupId>
+          </exclusion>
+        </exclusions>
+      </dependency>
+      <!-- JCE: SMIME -->
+      <dependency>
+        <groupId>org.bouncycastle</groupId>
+        <artifactId>bcmail-jdk15on</artifactId>
+        <version>${version.bouncycastle}</version>
+        <exclusions>
+          <exclusion>
+            <artifactId>bcprov-jdk15on</artifactId>
+            <groupId>org.bouncycastle</groupId>
+          </exclusion>
+        </exclusions>
+      </dependency>
+      <!-- JCE: OpenPGP/BCPG -->
+      <dependency>
+        <groupId>org.bouncycastle</groupId>
+        <artifactId>bcpg-jdk15on</artifactId>
+        <version>${version.bouncycastle}</version>
+        <exclusions>
+          <exclusion>
+            <artifactId>bcprov-jdk15on</artifactId>
+            <groupId>org.bouncycastle</groupId>
+          </exclusion>
+        </exclusions>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
 
 </project>
