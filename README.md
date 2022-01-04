@@ -1,3 +1,5 @@
+[![Java CI with Maven](https://github.com/frank-rahn/security/actions/workflows/maven.yml/badge.svg)](https://github.com/frank-rahn/security/actions/workflows/maven.yml)
+
 # Security
 Dieses Repository enthält Projekte mit dem Themenschwerpunkt Security.
 
@@ -14,13 +16,6 @@ Dieses Projekt enthält einige `LoginModule` für die [Java Authentication and A
 ~~Eclipse Konfiguration neu erzeugen:~~ `$ mvn eclipse:clean eclipse:eclipse`
 
 Anwendung bauen: `$ mvn clean install`
-
-## Continuous Integration
-Dieses Projekt wird automatisiert mit [Jenkins](http://jenkins-ci.org/) gebaut. 
-
-[![Status dieses Projekts](https://buildhive.cloudbees.com/job/frank-rahn/job/security/badge/icon)](https://buildhive.cloudbees.com/job/frank-rahn/job/security/)
-
-Es wird der Hosting-Dienst [BuildHive](https://buildhive.cloudbees.com/) von [CloudBees](http://www.cloudbees.com/) verwendet.
 
 ## Homepage des Autors
 [Frank W. Rahn](https://www.frank-rahn.de)
