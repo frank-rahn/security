@@ -20,7 +20,7 @@
 
   <!-- Project Settings -->
   <properties>
-    <version.commons.codec>1.15</version.commons.codec>
+    <version.commons.codec>1.19.0</version.commons.codec>
     <version.bouncycastle>1.70</version.bouncycastle>
   </properties>
 
