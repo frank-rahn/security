@@ -32,7 +32,6 @@ public class RolesConfigVerifyModule implements LoginModule {
       Map<String, ?> sharedState,
       Map<String, ?> options) {
 
-    //noinspection unchecked
     this.sharedState = (Map<String, Object>) sharedState;
 
     String role = trimToNull((String) options.get(OPTIN_ROLE));

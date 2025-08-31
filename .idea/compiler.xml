@@ -19,4 +19,18 @@
       </profile>
     </annotationProcessing>
   </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="jaas-common" options="-Xlint:deprecation -Xlint:unchecked" />
+      <module name="jaas-modules" options="-Xlint:deprecation -Xlint:unchecked" />
+      <module name="java-security-api-certificate" options="-Xlint:deprecation -Xlint:unchecked" />
+      <module name="java-security-api-common" options="-Xlint:deprecation -Xlint:unchecked" />
+      <module name="java-security-api-digest" options="-Xlint:deprecation -Xlint:unchecked" />
+      <module name="java-security-api-encrypt-asymmetric" options="-Xlint:deprecation -Xlint:unchecked" />
+      <module name="java-security-api-encrypt-symmetric" options="-Xlint:deprecation -Xlint:unchecked" />
+      <module name="java-security-api-provider" options="-Xlint:deprecation -Xlint:unchecked" />
+      <module name="java-security-api-provider-bouncycastle" options="-Xlint:deprecation -Xlint:unchecked" />
+      <module name="java-security-api-signature" options="-Xlint:deprecation -Xlint:unchecked" />
+    </option>
+  </component>
 </project>

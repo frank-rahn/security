@@ -6,7 +6,7 @@
 
   <parent>
     <groupId>de.rahn.security</groupId>
-    <version>1.0.0-SNAPSHOT</version>
+    <version>2.0.0-SNAPSHOT</version>
     <artifactId>security</artifactId>
     <relativePath>../pom.xml</relativePath>
   </parent>
@@ -21,7 +21,7 @@
   <!-- Project Settings -->
   <properties>
     <version.commons.codec>1.19.0</version.commons.codec>
-    <version.bouncycastle>1.70</version.bouncycastle>
+    <version.bouncycastle>1.78.1</version.bouncycastle>
   </properties>
 
   <modules>
@@ -95,51 +95,26 @@
       <!-- JCE: Provider -->
       <dependency>
         <groupId>org.bouncycastle</groupId>
-        <artifactId>bcprov-jdk15on</artifactId>
+        <artifactId>bcprov-jdk18on</artifactId>
         <version>${version.bouncycastle}</version>
       </dependency>
-      <!-- JCE: Provider with IDEA -->
-      <!-- Gleider Inhalt wie bcprov-jdk15on nur zusätzlich IDEA -->
+      <!-- JCE: PKIX/CMS/EAC/PKCS/OCSP/TSP/OPENSSL -->
       <dependency>
         <groupId>org.bouncycastle</groupId>
-        <artifactId>bcprov-ext-jdk15on</artifactId>
+        <artifactId>bcpkix-jdk18on</artifactId>
         <version>${version.bouncycastle}</version>
-      </dependency>
-      <!-- JCE: PKIX/CMS/EAC/PKCS OCSP/TSP/OPENSSL -->
-      <dependency>
-        <groupId>org.bouncycastle</groupId>
-        <artifactId>bcpkix-jdk15on</artifactId>
-        <version>${version.bouncycastle}</version>
-        <exclusions>
-          <exclusion>
-            <artifactId>bcprov-jdk15on</artifactId>
-            <groupId>org.bouncycastle</groupId>
-          </exclusion>
-        </exclusions>
       </dependency>
       <!-- JCE: SMIME -->
       <dependency>
         <groupId>org.bouncycastle</groupId>
-        <artifactId>bcmail-jdk15on</artifactId>
+        <artifactId>bcmail-jdk18on</artifactId>
         <version>${version.bouncycastle}</version>
-        <exclusions>
-          <exclusion>
-            <artifactId>bcprov-jdk15on</artifactId>
-            <groupId>org.bouncycastle</groupId>
-          </exclusion>
-        </exclusions>
       </dependency>
       <!-- JCE: OpenPGP/BCPG -->
       <dependency>
         <groupId>org.bouncycastle</groupId>
-        <artifactId>bcpg-jdk15on</artifactId>
+        <artifactId>bcpg-jdk18on</artifactId>
         <version>${version.bouncycastle}</version>
-        <exclusions>
-          <exclusion>
-            <artifactId>bcprov-jdk15on</artifactId>
-            <groupId>org.bouncycastle</groupId>
-          </exclusion>
-        </exclusions>
       </dependency>
     </dependencies>
   </dependencyManagement>

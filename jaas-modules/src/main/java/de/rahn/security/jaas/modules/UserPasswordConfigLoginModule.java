@@ -13,7 +13,7 @@ import javax.security.auth.callback.PasswordCallback;
 import javax.security.auth.callback.UnsupportedCallbackException;
 import javax.security.auth.login.LoginException;
 import javax.security.auth.spi.LoginModule;
-import org.apache.commons.lang3.StringUtils;
+import org.apache.commons.lang3.Strings;
 
 /**
  * Prüfe Benutzername und Passwort gegen die LoginModule-Konfiguration. Hilfreich bei der Verwendung
@@ -78,8 +78,8 @@ public class UserPasswordConfigLoginModule implements LoginModule {
     }
 
     // Prüfen von Benutzername und Passwort
-    if (StringUtils.equals(username, nameCallback.getName())
-        && StringUtils.equals(password, new String(passwordCallback.getPassword()))) {
+    if (Strings.CS.equals(username, nameCallback.getName())
+        && Strings.CS.equals(password, new String(passwordCallback.getPassword()))) {
       principal = new UserPrincipal(username);
       return true;
     }

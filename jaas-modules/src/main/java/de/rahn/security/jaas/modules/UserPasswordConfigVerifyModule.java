@@ -13,7 +13,7 @@ import javax.security.auth.callback.PasswordCallback;
 import javax.security.auth.callback.UnsupportedCallbackException;
 import javax.security.auth.login.LoginException;
 import javax.security.auth.spi.LoginModule;
-import org.apache.commons.lang3.StringUtils;
+import org.apache.commons.lang3.Strings;
 
 /**
  * Prüfe Benutzername und Passwort gegen die LoginModule-Konfiguration. Hilfreich bei der Verwendung
@@ -31,7 +31,7 @@ public class UserPasswordConfigVerifyModule implements LoginModule {
   public static final String OPTIN_PASSWORD = "password";
 
   private CallbackHandler callbackHandler;
-  private Map<String, String> sharedState;
+  private Map<String, Object> sharedState;
 
   private String username;
   private String password;
@@ -50,8 +50,7 @@ public class UserPasswordConfigVerifyModule implements LoginModule {
       throw new IllegalArgumentException("callbackHandler ist null");
     }
 
-    //noinspection unchecked
-    this.sharedState = (Map<String, String>) sharedState;
+    this.sharedState = (Map<String, Object>) sharedState;
 
     username = trimToNull((String) options.get(OPTIN_USERNAME));
     if (username == null) {
@@ -83,8 +82,8 @@ public class UserPasswordConfigVerifyModule implements LoginModule {
     }
 
     // Prüfen von Benutzername und Passwort
-    if (StringUtils.equals(username, nameCallback.getName())
-        && StringUtils.equals(password, new String(passwordCallback.getPassword()))) {
+    if (Strings.CS.equals(username, nameCallback.getName())
+        && Strings.CS.equals(password, new String(passwordCallback.getPassword()))) {
       succeed = true;
     }
 
