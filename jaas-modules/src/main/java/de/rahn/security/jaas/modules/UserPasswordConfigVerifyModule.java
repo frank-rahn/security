@@ -39,6 +39,7 @@ public class UserPasswordConfigVerifyModule implements LoginModule {
   private boolean succeed = false;
 
   /** @see LoginModule#initialize(Subject, CallbackHandler, Map, Map) */
+  @SuppressWarnings("unchecked")
   @Override
   public void initialize(
       Subject subject,

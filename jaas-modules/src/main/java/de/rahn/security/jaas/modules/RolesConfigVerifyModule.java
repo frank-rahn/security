@@ -25,6 +25,7 @@ public class RolesConfigVerifyModule implements LoginModule {
   private Set<String> roles;
 
   /** @see LoginModule#initialize(Subject, CallbackHandler, Map, Map) */
+  @SuppressWarnings("unchecked")
   @Override
   public void initialize(
       Subject subject,
