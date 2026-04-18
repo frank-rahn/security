@@ -21,7 +21,7 @@
   <!-- Project Settings -->
   <properties>
     <version.commons.codec>1.19.0</version.commons.codec>
-    <version.bouncycastle>1.81</version.bouncycastle>
+    <version.bouncycastle>1.84</version.bouncycastle>
   </properties>
 
   <modules>
